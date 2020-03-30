@@ -48,5 +48,6 @@ int main() {
 - Reflector C
 
 ### Future work:
+- Add more checks for set_plugboard() method (unique pairs, etc).
 - Add more rotors (VI, VII and VIII).
 - Add support to set the position of the alphabet ring in each rotor (also called ringstellung).
