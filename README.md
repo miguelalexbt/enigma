@@ -1,6 +1,6 @@
 # Enigma
 
-### Description
+### Description:
 While browsing Youtube, I came across [this](https://www.youtube.com/watch?v=G2_Q9FoD-oQ) video. I thought it was interesting and decided to implement it as a fun side project. This is a simple implementation of an [Enigma M3 machine](https://en.wikipedia.org/wiki/Enigma_machine). It allows the user to choose the rotors (and its starting positions) and the reflector to be used by the machine. It also allows to add plugs to the plugboard (order matters here!).
 
 ### Example:
