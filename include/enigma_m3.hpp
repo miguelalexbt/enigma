@@ -19,7 +19,7 @@ public:
     using plug_type = std::pair<char, char>;
 
     /**
-     * @brief Set machine's rotors and reflector.
+     * @brief Set machine's rotors (right to left) and reflector.
      * @param rotors Rotors to be used, in order.
      * @param reflector Reflector to be used.
      */

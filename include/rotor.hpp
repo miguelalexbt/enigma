@@ -15,13 +15,13 @@ public:
     };
 
     /**
-     * @brief Create a new rotor from the specified type, starting at the specified setting.
+     * @brief Create a new rotor from the specified type, starting at the specified position.
      * @param type Rotor's type.
-     * @param start_setting Rotor's starting setting.
+     * @param start_setting Rotor's starting position.
      */
-    explicit rotor(const rotor_type type, const char start_setting = 'A');
+    explicit rotor(const rotor_type type, const char start_position = 'A');
 
-protected:
+// protected:
     /**
      * @brief Replace input letter by its corresponding output letter.
      * @param in Input letter.
@@ -32,18 +32,18 @@ protected:
 
     /**
      * @brief Check if a turnover is going to occur in the next step.
-     * @return True if current setting is the notch, false otherwise.
+     * @return True if current position is the notch, false otherwise.
      */
     bool turnover() const;
 
     /**
-     * @brief Step the rotor, incrementing its current setting.
+     * @brief Step the rotor, incrementing its current position.
      */
     void step();
 
 private:
-    /** Notch and current setting */
-    char notch, setting;
+    /** Notch and current position */
+    char notch, position;
 
     /** Alphabet ring */
     std::map<char, char> ring;

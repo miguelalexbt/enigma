@@ -2,10 +2,10 @@
 
 namespace enigma {
 
-rotor::rotor(const rotor_type type, const char start_setting) {
-    setting = toupper(start_setting);
+rotor::rotor(const rotor_type type, const char start_position) {
+    position = toupper(start_position);
 
-    if (setting < 'A' || setting > 'Z')
+    if (position < 'A' || position > 'Z')
         throw std::invalid_argument("starting positions must range from a/A to z/Z.");
 
     std::array<char, 26> permutations;
@@ -59,12 +59,12 @@ rotor::rotor(const rotor_type type, const char start_setting) {
     }
 
     for (int i = 0; i < 26; ++i) {
-        ring.insert({'A' + i, permutations[i]});   
+        ring.insert({'A' + i, permutations[i]});
     }
 }
 
 char rotor::replace(const char in, bool backwards) const {
-    char offset = in + (setting - 'A');
+    char offset = in + (position - 'A');
 
     if (offset > 'Z')
         offset -= 26;
@@ -73,13 +73,13 @@ char rotor::replace(const char in, bool backwards) const {
 
     // Before reflector
     if (!backwards) {
-        value = ring.at(offset) - (setting - 'A');
+        value = ring.at(offset) - (position - 'A');
     }
     // After reflector
     else {
         for (auto &i : ring) {
             if (i.second == offset) {
-                value = i.first - (setting - 'A');
+                value = i.first - (position - 'A');
                 break;
             }
         }
@@ -92,12 +92,12 @@ char rotor::replace(const char in, bool backwards) const {
 }
 
 bool rotor::turnover() const {
-    return setting == notch;
+    return position == notch;
 }
 
 void rotor::step() {
-    if (++setting > 'Z')
-        setting = 'A';
+    if (++position > 'Z')
+        position = 'A';
 }
 
 } // namespace enigma
