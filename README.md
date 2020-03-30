@@ -3,7 +3,23 @@
 ### Description:
 While browsing Youtube, I came across [this](https://www.youtube.com/watch?v=G2_Q9FoD-oQ) video. I thought it was interesting and decided to implement it as a fun side project. This is a simple implementation of an [Enigma M3 machine](https://en.wikipedia.org/wiki/Enigma_machine). It allows the user to choose the rotors (and its starting positions) and the reflector to be used by the machine. It also allows to add plugs to the plugboard (order matters here!).
 
-### Example:
+### Rotors supported:
+- Rotor I
+- Rotor II
+- Rotor III
+- Rotor IV
+- Rotor V
+
+### Reflectors supported:
+- Reflector B
+- Reflector C
+
+### Future work:
+- Add more checks for set_plugboard() method (unique pairs, etc).
+- Add more rotors (VI, VII and VIII).
+- Add support to set the position of the alphabet ring in each rotor (also called ringstellung).
+
+### Usage:
 ```cpp
 #include <iostream>
 
@@ -36,18 +52,3 @@ int main() {
     return 0;
 }
 ```
-### Rotors supported:
-- Rotor I
-- Rotor II
-- Rotor III
-- Rotor IV
-- Rotor V
-
-### Reflectors supported:
-- Reflector B
-- Reflector C
-
-### Future work:
-- Add more checks for set_plugboard() method (unique pairs, etc).
-- Add more rotors (VI, VII and VIII).
-- Add support to set the position of the alphabet ring in each rotor (also called ringstellung).
