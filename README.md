@@ -1,7 +1,7 @@
 # Enigma
 
 ### Description
-While browsing Youtube, I came across [this](https://www.youtube.com/watch?v=G2_Q9FoD-oQ) video. I thought it was interesting and decided to implement it as proof of concept (and a fun side project). This is a simple implementation of an [Enigma M3 machine](https://en.wikipedia.org/wiki/Enigma_machine). It allows the user to choose the rotors (and its starting positions) and the reflector to be used by the machine. The user can also set links in the plugboard (order matters here!).
+While browsing Youtube, I came across [this](https://www.youtube.com/watch?v=G2_Q9FoD-oQ) video. I thought it was interesting and decided to implement it as a fun side project. This is a simple implementation of an [Enigma M3 machine](https://en.wikipedia.org/wiki/Enigma_machine). It allows the user to choose the rotors (and its starting positions) and the reflector to be used by the machine. It also allows to add plugs to the plugboard (order matters here!).
 
 ### Example:
 ```cpp
@@ -24,7 +24,7 @@ int main() {
     // Reflector C
     reflector refl { reflector::REFLECTOR_C };
     
-    // Initialize the enigma machine
+    // Initialize the enigma machine (rotors' order is right to left)
     enigma_m3 e {{ rotor1, rotor2, rotor3 }, refl };
     
     // Set plugboard entries (order matters here!)
